@@ -1,0 +1,11 @@
+
+export function useToggle(on: boolean): [boolean, () => void] {
+  // your code here
+
+  const [toggle, setToggle] = useState(on);
+
+  function handleToggle() {
+    setToggle(!toggle)
+  }
+  return [toggle, handleToggle];
+}
