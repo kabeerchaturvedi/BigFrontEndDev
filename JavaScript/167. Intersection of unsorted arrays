@@ -1,0 +1,19 @@
+
+
+
+
+
+/**
+ * @param {any[]} arr1
+ * @param {any[]} arr2
+ * @returns {any[]}
+ */
+function getIntersection(arr1, arr2) {
+const filteredArray = arr1.filter(value=>arr2.includes(value));
+const res = Array.from(new Set(filteredArray));
+return res;
+}
+
+
+
+
