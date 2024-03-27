@@ -1,0 +1,13 @@
+
+/**
+ * @param {number[][]} arrList
+ * non-descending integer array
+ * @return {number[]} 
+ */
+function merge(arrList) {
+  let res = arrList.flat(Infinity);
+  res.sort(function (a, b) {
+    return a - b;
+  })
+  return res;
+}
