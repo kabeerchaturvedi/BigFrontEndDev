@@ -1,0 +1,12 @@
+/**
+ * @param {string} str
+ * @return {string | null}
+ */
+function firstDuplicate(str) {
+  const uniqueChar = new Set();
+  for (let i = 0; i < str.length; i++) {
+    if (uniqueChar.has(str[i])) return str[i];
+    uniqueChar.add(str[i]);
+  }
+  return null;
+}
