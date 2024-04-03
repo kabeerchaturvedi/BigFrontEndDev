@@ -1,0 +1,12 @@
+
+/**
+ * @param {number[]} arr1 - sorted integer array
+ * @param {number[]} arr2 - sorted integer array
+ * @returns {number}
+ */
+function median(arr1, arr2) {
+  const newArr = [...arr1, ...arr2].sort((a, b) => a - b);
+  let length = newArr.length;
+  let mid = Math.floor(length / 2);
+  return length % 2 === 0 ? (newArr[mid] + newArr[mid - 1]) / 2 : newArr[mid];
+}
