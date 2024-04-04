@@ -1,0 +1,21 @@
+
+/**
+ * @param {string} str
+ * @return {number}
+ */
+function countPalindromicSubstr(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    expand(i, i) // odd length
+    expand(i, i + 1) // even length
+  }
+  return count
+
+  function expand(l, r) {
+    while (l >= 0 && r < str.length && str[l] === str[r]) {
+      count++
+      l--
+      r++
+    }
+  }
+}
