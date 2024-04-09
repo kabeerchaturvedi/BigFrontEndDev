@@ -1,0 +1,17 @@
+
+
+/**
+ * @param {number[]} arr
+ * @returns number
+ */
+function findSingle(arr) {
+
+  const occurences = arr.reduce(function (acc, curr) {
+   return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
+  }, {});
+
+  for (let i in occurences) {
+    if (occurences[i] === 1) return parseInt(i);
+  }
+}
+
