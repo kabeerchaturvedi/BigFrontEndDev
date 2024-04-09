@@ -1,0 +1,13 @@
+
+
+function createCounter() {
+  let counter = -1;
+
+  return {
+    get count() {
+      counter += 1;
+      return counter;
+    }
+  }
+}
+
