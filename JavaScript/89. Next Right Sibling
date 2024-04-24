@@ -1,0 +1,22 @@
+
+/**
+ * @param {HTMLElement} root
+ * @param {HTMLElement} target
+ * @return {HTMLElemnt | null}
+ */
+function nextRightSibling(root, target) {
+  if (!target) return null;
+  if (target.nextElementSibling) {
+    return target.nextElementSibling;
+  }
+
+  let parent = target.parentElement;
+  let parentNextSibling = nextRightSibling(root, parent);
+  while (parentNextSibling) {
+    if (parentNextSibling && parentNextSibling.firstElementChild) {
+      return parentNextSibling.firstElementChild;
+    }
+    parentNextSibling = nextRightSibling(root, parentNextSibling);
+  }
+  return null;
+}
