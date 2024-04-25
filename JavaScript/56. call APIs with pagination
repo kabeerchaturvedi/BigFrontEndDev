@@ -1,0 +1,20 @@
+// fetchList is provided for you
+// const fetchList = (since?: number) => 
+//   Promise<{items: Array<{id: number}>}>
+
+
+// you can change this to generator function if you want
+const fetchListWithAmount = async (amount = 5) => {
+  const items = [];
+  let lastItemId = null;
+
+  while (items.length <= amount) {
+    const response = lastItemId ? await fetchList(lastItemId) : await fetchList();
+    if (!response || !response.items.length) {
+      break;
+    }
+    items.push(...response.items);
+    lastItemId = items[items.length - 1].id;
+  }
+  return items.slice(0, amount);
+};
