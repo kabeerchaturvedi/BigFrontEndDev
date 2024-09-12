@@ -1,0 +1,12 @@
+
+/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+function largestDiff(arr) {
+  // your code here
+  if (arr.length === 0)
+    return 0;
+
+  return Math.abs(Math.max(...arr) - Math.min(...arr));
+}
