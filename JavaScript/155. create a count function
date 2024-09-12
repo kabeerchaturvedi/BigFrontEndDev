@@ -1,0 +1,8 @@
+function count() {
+  count.val = count.val || 1;
+  return count.val++
+}
+
+count.reset = function () {
+  count.val = 1;
+}
