@@ -1,0 +1,22 @@
+
+/**
+ * @param {string} str - roman numeral string
+ * @returns {number} integer
+ */
+
+let symbols = {
+  "I": 1,
+  "V": 5,
+  "X": 10,
+  "L": 50,
+  "C": 100,
+  "D": 500,
+  "M": 1000
+};
+function romanToInteger(str) {
+  value = 0;
+  for (let i = 0; i < str.length; i += 1) {
+    symbols[str[i]] < symbols[str[i + 1]] ? value -= symbols[str[i]] : value += symbols[str[i]]
+  }
+  return value
+};
