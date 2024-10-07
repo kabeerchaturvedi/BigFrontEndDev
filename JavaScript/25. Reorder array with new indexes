@@ -1,0 +1,13 @@
+/**
+ * @param {any[]} items
+ * @param {number[]} newOrder
+ * @return {void}
+ */
+function sort(items, newOrder) {
+  // reorder items inline
+  items.sort(function (a, b) {
+    let x = items.indexOf(a);
+    let y = items.indexOf(b);
+    return newOrder[x] - newOrder[y];
+  });
+}
